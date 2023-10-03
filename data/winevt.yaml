@@ -5,15 +5,17 @@
 # name:
 #
 #     source_name:            Type: list[str] | REQUIRED | case-insensitive
-#                             A list of source names to match against.
+#                             A list of source names to match against. Multiple
+#                             entries will be checked with OR.
 #
-#     provider_identifier:    Type: list[str] | REQUIRED | case-insensitive
+#     provider_identifier:    Type: list[str] | OPTIONAL | case-insensitive
 #                             A list of provider identifiers to match against.
+#                             Multiple entries will be checked with OR.
 #
 #     event_version:          Type: int | REQUIRED
 #                             The event version to match against.
 #
-#     event_identifier:       Type: int | OPTIONAL
+#     message_identifier:     Type: int | REQUIRED
 #                             The event identifier to match against.
 #
 #     references:             Type: list[str] | OPTIONAL
@@ -55,7 +57,7 @@ security_4624_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-a5ba-3e3b0328c30d}'
-  event_identifier: 4624
+  message_identifier: 4624
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624
@@ -115,7 +117,7 @@ security_4624_v1:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-a5ba-3e3b0328c30d}'
-  event_identifier: 4624
+  message_identifier: 4624
   event_version: 1
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624
@@ -177,7 +179,7 @@ security_4624_v2:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-a5ba-3e3b0328c30d}'
-  event_identifier: 4624
+  message_identifier: 4624
   event_version: 2
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4624
@@ -251,7 +253,7 @@ security_4625_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-a5ba-3e3b0328c30d}'
-  event_identifier: 4625
+  message_identifier: 4625
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4625
@@ -311,7 +313,7 @@ security_4634_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4634
+  message_identifier: 4634
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4634
@@ -339,7 +341,7 @@ security_4648_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4648
+  message_identifier: 4648
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4648
@@ -386,7 +388,7 @@ security_4688_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4688
+  message_identifier: 4688
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4688
@@ -412,7 +414,7 @@ security_4688_v1:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4688
+  message_identifier: 4688
   event_version: 1
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4688
@@ -440,7 +442,7 @@ security_4688_v2:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4688
+  message_identifier: 4688
   event_version: 2
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4688
@@ -488,7 +490,7 @@ security_4720_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4720
+  message_identifier: 4720
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4720
@@ -552,7 +554,7 @@ security_4728_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4728
+  message_identifier: 4728
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/audit-security-group-management
@@ -589,7 +591,7 @@ security_4732_v0:
     - Microsoft-Windows-Security-Auditing
   provider_identifier:
     - '{54849625-5478-4994-A5BA-3E3B0328C30D}'
-  event_identifier: 4732
+  message_identifier: 4732
   event_version: 0
   references:
     - https://learn.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4732
@@ -625,7 +627,7 @@ system_7045_v0:
     - 'Service Control Manager'
   provider_identifier:
     - '{555908d1-a6d7-4695-8e1e-26931d2012f4}'
-  event_identifier: 7045
+  message_identifier: 7045
   event_version: 0
   references:
     - https://windows-event-explorer.app.elstc.co/publisher/Service%20Control%20Manager/event/7045/v0
